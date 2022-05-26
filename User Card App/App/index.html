@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+    />
+    <link rel="stylesheet" href="../public/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="section">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img v-bind:src="cards[0].userCard" alt="Placeholder image" />
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img
+                    v-bind:src="cards[0].userProfile"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">{{cards.user}}</p>
+                <p class="subtitle is-6">{{cards.userName}}</p>
+              </div>
+            </div>
+
+            <div class="content">
+              {{cards.bio}} <a href="#">#css</a>
+              <a href="#">#responsive</a>
+              <br />
+              <time datetime="2016-1-1">{{cards.Time}} {{cards.Date}}</time>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1>something is wrong</h1>
+
+    <!-- ============= SCRIPTS =================-->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./Components/main.js"></script>
+    <script src="./Components/seed.js"></script>
+  </body>
+</html>

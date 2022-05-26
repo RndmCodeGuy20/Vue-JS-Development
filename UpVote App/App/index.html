@@ -20,7 +20,7 @@
       <h2 class="title has-text-centered dividing-header">UpVote!</h2>
 
       <div class="section">
-        <article
+        <article 
           v-for="submission in sortedSubmissions"
           v-bind:key="submission.id"
           class="media"
@@ -44,7 +44,11 @@
                 <br />
                 <small class="is-size-7">
                   Submitted by:
-                  <img class="image is-24x24" v-bind:src="submission.avatar" />
+                  <img
+                    class="image is-24x24"
+                    v-bind:src="submission.avatar"
+                    v-bind:class="{ 'red-border': submission.votes >= 25 }"
+                  />
                 </small>
               </p>
             </div>
