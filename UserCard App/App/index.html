@@ -17,45 +17,59 @@
   </head>
   <body>
     <div id="app">
-      <div class="section">
+      <h2 class="title has-text-centered dividing-header">Social!</h2>
+      <h3 class="has-text-centered dividing-header">Let's Get Social!!!</h3>
+      <div
+        class="section"
+        id="section"
+        v-for="card in cards"
+        v-bind:key="card.id"
+      >
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img v-bind:src="cards[0].userCard" alt="Placeholder image" />
+              <img alt="Placeholder image" v-bind:src="card.post" />
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    v-bind:src="cards[0].userProfile"
-                    alt="Placeholder image"
-                  />
+                  <img alt="Placeholder image" v-bind:src="card.userImg" />
                 </figure>
               </div>
               <div class="media-content">
-                <p class="title is-4">{{cards.user}}</p>
-                <p class="subtitle is-6">{{cards.userName}}</p>
+                <p class="title is-4">{{card.name}}</p>
+                <p class="subtitle is-6">{{card.userName}}</p>
               </div>
             </div>
 
             <div class="content">
-              {{cards.bio}} <a href="#">#css</a>
-              <a href="#">#responsive</a>
+              {{card.bio}} <br />
+              <a href="" rel="noopener noreferrer" v-for="tag in card.tags"
+                >{{tag}} &nbsp;</a
+              >
+
               <br />
-              <time datetime="2016-1-1">{{cards.Time}} {{cards.Date}}</time>
+              <time datetime="2016-1-1">{{card.Time}} - {{card.Date}} </time>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <h1>something is wrong</h1>
+      <div class="columns is-centered">
+        <a
+          href="./upload.html"
+          class="button is-primary"
+          style="margin-bottom: 20px"
+          >Upload</a
+        >
+      </div>
+    </div>
 
     <!-- ============= SCRIPTS =================-->
     <script src="https://unpkg.com/vue@3"></script>
-    <script src="./Components/main.js"></script>
-    <script src="./Components/seed.js"></script>
+    <script src="./main.js"></script>
+    <script src="./seed.js"></script>
   </body>
 </html>
